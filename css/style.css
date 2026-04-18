@@ -24,6 +24,7 @@ a{
 
 
 }
+
 .main-color{
    color:  var(--color-primary) !important;
 }
@@ -283,31 +284,68 @@ line-height: 1.6;
     bottom: -25px;
     left: -50px;
 }
-@media (max-width: 768px) {
-    .bg-bottom {
-        position: static;
-        margin-top: 20px;
-    }
-    .font-big {
-        font-size: 28px;
-    }
-
-    .change-p {
-        font-size: 12px !important;
-    }
-
-    .bg-img {
-        text-align: center;
-        .bg-right {
-    min-height: 400px;
-    border-radius: 15px;
+.icon-nav{
+  margin-right: 5px;
 }
-
+.navbar-collapse {
+  transition: all 0.4s ease;
 }
-    .bg-right {
-        min-height: 250px;
-        margin-top: 20px;
-    }
+@media (max-width: 991px) {
+
+  .navbar-collapse {
+    background: #111111f0;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+
+    width: 100%;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-actions {
+    width: 100%;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-item-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    width: 100%;
+  }
+
+  .btn-nav {
+    width: 100%;
+    display: block;
+  }
+
+  .icon-nav {
+    display: none;
+  }
+  .bg-right {
+    margin: auto;
+    height: 300px;
+  }
+
+  .col-12 .col-lg-5 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .bg-bottom{
+  left: -15px;
+  }
 }
 /*end-section-one*/
 /*start-section-two*/
@@ -463,26 +501,31 @@ line-height: 1.6;
 
 @media (max-width: 768px) {
 
-  .blur{
-    width: 90% !important;
-    height: 220px !important;
-    margin: auto;
-  }
 
   .big-text{
-    font-size: 26px;
+    font-size: 15px;
   }
 
   .left-text,
   .right-text{
-    font-size: 8px;
+    font-size: 9px;
     width: auto;
   }
 
   .right-text{
-    left: 100px;
+    left: 200px;
   }
   
+  .carousel-item .d-flex {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .blur {
+    width: 100% !important;
+    max-width: 320px;
+  }
 
 }
 
