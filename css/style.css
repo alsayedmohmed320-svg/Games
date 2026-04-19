@@ -15,15 +15,15 @@ ul{
 a{
     text-decoration: none;
   
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+   
+}
+:root{
+    --color-primary: #cbfe1c;
+ --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-:root{
-    --color-primary: #cbfe1c;
 
-
-}
 
 .main-color{
    color:  var(--color-primary) !important;
@@ -108,12 +108,56 @@ a{
 .border-white{
     color:white;
     -webkit-text-stroke: 1px white;
-}
-.navbar-toggler {
-  outline: none;
-  box-shadow: none;
+}/* الشكل الطبيعي */
+.navbar-toggler-icon {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  position: relative;
+  transition: 0.3s;
 }
 
+/* الخطين فوق وتحت */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  left: 0;
+  transition: 0.3s;
+}
+
+.navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler-icon::after {
+  top: 8px;
+}
+
+/* 🔥 لما تضغط */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent; /* يخفي الخط الأوسط */
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.navbar-toggler {
+  box-shadow: none;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background: transparent;
+}
 .navbar-toggler-icon {
   background-image: none;
   width: 30px;
@@ -262,6 +306,7 @@ line-height: 1.6;
 .bg-right{
     background-image: url(../images/hero-img.png);
      width: 100%;
+     height: 400px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -297,8 +342,10 @@ line-height: 1.6;
     padding: 20px;
     border-radius: 12px;
     margin-top: 10px;
-
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+
   }
 
   .navbar-nav {
@@ -320,6 +367,7 @@ line-height: 1.6;
 
   .nav-item-box {
     display: flex;
+    
     align-items: center;
     gap: 10px;
     color: white;
