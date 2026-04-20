@@ -394,6 +394,10 @@ line-height: 1.6;
   .bg-bottom{
   left: -15px;
   }
+  .sec-header{
+    height: auto;
+    margin-top:   100px;
+  }
 }
 /*end-section-one*/
 /*start-section-two*/
