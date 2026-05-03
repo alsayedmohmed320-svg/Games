@@ -38,12 +38,9 @@ a{
 
 }
 
-/* اللون */
 .navbar .nav-link:hover {
     color:var(--color-primary) !important;
 }
-
-/* خط واحد فقط */
 .navbar .nav-link::after {
     content: "";
     position: absolute;
@@ -92,7 +89,6 @@ a{
     transition: 0.5s;
 }
 
-/* hover effect */
 .btn.change-atr:hover::after {
     opacity: 0.25; 
 }
@@ -107,9 +103,15 @@ a{
 }
 .border-white{
     color:white;
-    -webkit-text-stroke: 1px white;
-}/* الشكل الطبيعي */
+
+}
+.navbar-toggler {
+  box-shadow: none;
+  border: none;
+}
+
 .navbar-toggler-icon {
+  background-image: none !important;
   width: 30px;
   height: 3px;
   background-color: white;
@@ -118,7 +120,6 @@ a{
   transition: 0.3s;
 }
 
-/* الخطين فوق وتحت */
 .navbar-toggler-icon::before,
 .navbar-toggler-icon::after {
   content: "";
@@ -130,60 +131,24 @@ a{
   transition: 0.3s;
 }
 
-.navbar-toggler-icon::before {
-  top: -8px;
+.navbar-toggler-icon::before { top: -8px; }
+.navbar-toggler-icon::after { top: 8px; }
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+  background: transparent;
 }
 
-.navbar-toggler-icon::after {
-  top: 8px;
-}
-
-/* 🔥 لما تضغط */
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-  background-color: transparent; /* يخفي الخط الأوسط */
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
   transform: rotate(45deg);
   top: 0;
 }
 
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
   transform: rotate(-45deg);
   top: 0;
 }
-.navbar-toggler {
-  box-shadow: none;
-}
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-  background: transparent;
-}
-.navbar-toggler-icon {
-  background-image: none;
-  width: 30px;
-  height: 3px;
-  background-color: white;
-  display: block;
-  position: relative;
-}
 
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 3px;
-  background-color: white;
-  left: 0;
-}
 
-.navbar-toggler-icon::before {
-  top: -8px;
-}
-
-.navbar-toggler-icon::after {
-  top: 8px;
-}
 
 .bg-img{
     background-image: url(../images/hero-bg.jpg);
@@ -347,7 +312,9 @@ line-height: 1.6;
     width: 100%;
 
   }
-
+.nav-link{
+  text-align: center;
+}
   .navbar-nav {
     display: flex;
     flex-direction: column;
@@ -367,7 +334,7 @@ line-height: 1.6;
 
   .nav-item-box {
     display: flex;
-    
+    justify-content: center;
     align-items: center;
     gap: 10px;
     color: white;
@@ -383,7 +350,7 @@ line-height: 1.6;
     display: none;
   }
   .bg-right {
-    margin: auto;
+    margin: 0 auto;
     height: 300px;
   }
 
@@ -396,7 +363,6 @@ line-height: 1.6;
   }
   .sec-header{
     height: auto;
-    margin-top:   100px;
   }
 }
 /*end-section-one*/
@@ -452,7 +418,6 @@ line-height: 1.6;
 .bg8{background-image:url(../images/latest-games-8.png);}
 .bg9{background-image:url(../images/latest-games-9.png);}
 
-/* النصوص */
 .left-text,
 .right-text{
   position:absolute;
@@ -594,7 +559,6 @@ line-height: 1.6;
     transition: 0.3s;
 }
 
-/* icon square */
 .icon-box{
     width: 60px;
     height: 60px;
@@ -614,12 +578,10 @@ line-height: 1.6;
 .icon-box i:hover{
     color: black !important;
 }
-/* hover */
 .service-box:hover{
     background: #1a1a1a;
 }
 
-/* icon hover change */
 .service-box:hover .icon-box{
     border-color: var(--color-primary, 1);
     background: var(--color-primary );
@@ -633,7 +595,6 @@ line-height: 1.6;
     color: black;
 }
 
-/* spacing between rows (important) */
 .row{
     row-gap: 20px;
 }
@@ -652,13 +613,11 @@ line-height: 1.6;
     background-repeat: no-repeat
 }
 
-/* لازم */
 .service-box{
     position: relative;
     overflow: hidden;
 }
 
-/* triangle فوق شمال */
 .service-box::before{
     content: "";
     position: absolute;
@@ -675,7 +634,6 @@ line-height: 1.6;
     transition: 0.3s;
 }
 
-/* triangle تحت يمين */
 .service-box::after{
     content: "";
     position: absolute;
@@ -692,7 +650,6 @@ line-height: 1.6;
     transition: 0.3s;
 }
 
-/* hover يظهرهم */
 .service-box:hover::before,
 .service-box:hover::after{
     opacity: 1;
@@ -718,24 +675,22 @@ margin: auto;
 
 }
 .marquee-section {
-  height: 100vh; /* ياخد الشاشة كلها */
+  height: 100vh; 
   width: 100%;
   background: #000;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* يوسط الصفوف */
+  justify-content: center; 
   gap: 20px;
   overflow: hidden;
 }
 
-/* الصف */
 .marquee {
   overflow: hidden;
     position: relative;
   z-index: 1;
 }
 
-/* المحتوى */
 .marquee-content {
   display: flex;
   width: max-content;
@@ -746,7 +701,6 @@ margin: auto;
   animation-direction: reverse;
 }
 
-/* الصور */
 .marquee-content img {
   width: 80px;
   height: 80px;
@@ -775,7 +729,6 @@ margin: auto;
 
 
 
-/* الحركة */
 @keyframes scroll {
   0% {
     transform: translateX(0px);
@@ -785,7 +738,6 @@ margin: auto;
   }
 }
 
-/* هوفر */
 .marquee-content:hover {
   animation-play-state: paused;
 }
@@ -828,7 +780,6 @@ margin: auto;
   color: #aaa;
 }
 
-/* hover */
 .custom-card:hover .overlay{
   transform: translateY(-100%);
 }
@@ -851,7 +802,6 @@ margin: auto;
 }
 
 
-/* boxes */
 .info-box {
   display: flex;
   align-items: center;
@@ -872,7 +822,6 @@ margin: auto;
   border-radius: 50%;
 }
 
-/* community */
 .community-box {
   background: linear-gradient(45deg,#d9ff00,#8fff00);
   color: #000;
@@ -880,7 +829,6 @@ margin: auto;
   border-radius: 15px;
 }
 
-/* social icons */
 .social-icons {
   display: flex;
   gap: 15px;
@@ -896,21 +844,18 @@ margin: auto;
   transition: 0.3s;
 }
 
-/* 🔥 الهوفر اللي فيه blur */
 .social-icons i:hover {
   background-color: #00000070;
   backdrop-filter: blur(10px);
   transform: scale(1.1);
 }
 
-/* form */
 .form-box {
   background: rgba(255,255,255,0.05);
   padding: 25px;
   border-radius: 15px;
 }
 
-/* inputs */
 .form-box input,
 .form-box textarea,
 .form-box select {
@@ -924,7 +869,6 @@ margin: auto;
   transition: 0.3s;
 }
 
-/* focus */
 .form-box input:focus,
 .form-box textarea:focus,
 .form-box select:focus {
@@ -933,7 +877,6 @@ margin: auto;
 
   box-shadow: 0 0 10px #ffffff4d;
 }
-/* checkbox */
 .check {
   display: flex;
   align-items: center;
@@ -952,7 +895,7 @@ label {
   text-align: left; 
   margin-bottom: 5px;
 }
-/* button */
+
 .send-btn {
   width: 100%;
   padding: 12px;
@@ -969,7 +912,6 @@ label {
   transform: scale(1.03);
 }
 
-/* الخط */
 .line {
   width: 100%;
   height: 1px;
@@ -977,7 +919,6 @@ label {
   margin: 20px 0;
 }
 
-/* stats */
 .stats {
   display: flex;
   justify-content: space-between;
@@ -1018,7 +959,6 @@ label {
   color: #d9ff00;
 }
 
-/* اللوجو */
 .footer-logo {
   display: flex;
   align-items: center;
@@ -1034,7 +974,6 @@ color: #d9ff00;
   color: #aaa;
 }
 
-/* السوشيال */
 .social-icons {
   display: flex;
   gap: 10px;
@@ -1056,14 +995,12 @@ color: #d9ff00;
   color: #000;
 }
 
-/* الخط */
 .footer-line {
   height: 1px;
   background: rgba(255,255,255,0.1);
   margin: 30px 0;
 }
 
-/* تحت */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -1077,7 +1014,6 @@ color: #d9ff00;
   gap: 15px;
 }
 
-/* كل كلمة */
 .footer-links span {
   cursor: pointer;
   color: #aaa;
@@ -1085,7 +1021,6 @@ color: #d9ff00;
   font-size: 10px;
 }
 
-/* 🔥 الهوفر لكل كلمة لوحدها */
 .footer-links span:hover {
   color: #d9ff00;
 }
